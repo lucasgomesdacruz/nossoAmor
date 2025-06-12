@@ -36,6 +36,7 @@ const Stories = () => {
     <section className={styles.storiesSection}>
       <div className={styles.containerTitle}>
         <h2>Tudo que há em mim brilha por você, porque desde que te encontrei, até o céu parece ter sido pintado só pra nós.</h2>
+        <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Love%20Letter.png" alt="Love Letter" width="100" height="100" />
       </div>
       <div className={styles.floatingHearts}>
         <span>❤️</span>

@@ -20,6 +20,10 @@
       justify-content: center;
       gap: 0.5rem;
       letter-spacing: 0.05rem;
+
+      @media (max-width: 450px) {
+        flex-direction: column;
+      }
     }
 
     .icon {
