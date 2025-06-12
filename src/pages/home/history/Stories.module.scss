@@ -1,38 +1,42 @@
 .storiesSection {
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    position: relative;
-    background: linear-gradient(rgb(26, 26, 26), rgb(45, 45, 45));
-    overflow: hidden; 
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  background: linear-gradient(rgb(26, 26, 26), rgb(45, 45, 45));
+  overflow: hidden;
+  padding: 2rem 1rem;
 }
 
 .containerTitle {
-  width: 700px;
+  width: 100%;
+  max-width: 700px;
   margin-bottom: 40px;
-  letter-spacing: 0.20rem;
+  letter-spacing: 0.2rem;
+  text-align: center;
+
   h2 {
     color: white;
     font-size: 2.5rem;
     font-weight: lighter;
-    
+    line-height: 1.4;
   }
 }
 
 .title {
   color: black;
   font-size: 1.5rem;
-  margin-top: -2.2rem; // ou o espaçamento que desejar
-  position: static; // ou remover o position completamente
+  margin-top: -2.2rem;
   z-index: 10;
 }
 
 .embla {
   position: relative;
   max-width: 615px;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -55,37 +59,35 @@
 }
 
 .emblaImage {
-  width: 500px;
+  width: 100%;
+  max-width: 500px;
+  height: 600px;
+  max-height: 80vh;
   background: black;
   padding: 25px;
   border: 20px solid white;
   border-bottom: 45px solid white;
-  height: 700px;
-//   height: auto; // ou use max-height
-//   max-height: 80vh; // evita passar do viewport
   border-radius: 1rem;
   object-fit: cover;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  position: relative;
 }
 
 .emblaButton {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    height: 50px;
-    width: 50px;
-    top: 50%;
-    transform: translateY(-50%);
-    background: crimson;
-    border: none;
-    color: white;
-    // padding: 0.5rem 1rem;
-    font-size: 1.5rem;
-    cursor: pointer;
-    z-index: 1;
-    border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  height: 45px;
+  width: 45px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: crimson;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  z-index: 2;
+  border-radius: 50%;
 }
 
 .emblaButton:first-of-type {
@@ -97,83 +99,27 @@
 }
 
 .floatingHearts {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  span {
     position: absolute;
-    inset: 0;
-    pointer-events: none;
-
-    span {
-      position: absolute;
-      color: rgba(255, 255, 255, 0.8);
-      font-size: 2rem;
-      animation: floatUp 8s linear infinite;
-      opacity: 0;
-    }
-
-    span:nth-child(1) {
-      left: 10%;
-      top: 90%;
-      font-size: 2rem;
-      animation-delay: 0s;
-    }
-
-    span:nth-child(2) {
-      left: 25%;
-      top: 85%;
-      font-size: 1.8rem;
-      animation-delay: 1.5s;
-    }
-
-    span:nth-child(3) {
-      left: 40%;
-      top: 95%;
-      font-size: 2.2rem;
-      animation-delay: 3s;
-    }
-
-    span:nth-child(4) {
-      left: 60%;
-      top: 88%;
-      font-size: 2rem;
-      animation-delay: 4.5s;
-    }
-
-    span:nth-child(5) {
-      left: 75%;
-      top: 92%;
-      font-size: 1.6rem;
-      animation-delay: 6s;
-    }
-
-    span:nth-child(6) {
-      left: 85%;
-      top: 97%;
-      font-size: 2.5rem;
-      animation-delay: 7.5s;
-    }
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 2rem;
+    animation: floatUp 8s linear infinite;
+    opacity: 0;
   }
 
-@keyframes floatDots {
-  0% {
-    transform: translateY(0) scale(1);
-  }
-  50% {
-    transform: translateY(-10px) scale(1.05);
-  }
-  100% {
-    transform: translateY(0) scale(1);
-  }
+  span:nth-child(1) { left: 10%; top: 90%; font-size: 2rem; animation-delay: 0s; }
+  span:nth-child(2) { left: 25%; top: 85%; font-size: 1.8rem; animation-delay: 1.5s; }
+  span:nth-child(3) { left: 40%; top: 95%; font-size: 2.2rem; animation-delay: 3s; }
+  span:nth-child(4) { left: 60%; top: 88%; font-size: 2rem; animation-delay: 4.5s; }
+  span:nth-child(5) { left: 75%; top: 92%; font-size: 1.6rem; animation-delay: 6s; }
+  span:nth-child(6) { left: 85%; top: 97%; font-size: 2.5rem; animation-delay: 7.5s; }
 }
 
-@keyframes pulse {
-  0%,
-  100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.15);
-  }
-}
-
+// Animações
 @keyframes floatUp {
   0% {
     transform: translateY(0) scale(1);
@@ -185,5 +131,66 @@
   100% {
     transform: translateY(-120vh) scale(1.6);
     opacity: 0;
+  }
+}
+
+// RESPONSIVO
+
+// Tablets
+@media (max-width: 768px) {
+  .containerTitle h2 {
+    font-size: 1.8rem;
+    letter-spacing: 0.1rem;
+  }
+
+  .emblaImage {
+    padding: 20px;
+    border: 12px solid white;
+    border-bottom: 32px solid white;
+    max-height: 70vh;
+  }
+
+  .emblaButton {
+    height: 40px;
+    width: 40px;
+    font-size: 1rem;
+  }
+
+  .title {
+    font-size: 1.2rem;
+  }
+}
+
+// Celulares
+@media (max-width: 480px) {
+  .containerTitle h2 {
+    font-size: 1.4rem;
+  }
+
+  .emblaImage {
+    padding: 15px;
+    border: 8px solid white;
+    border-bottom: 24px solid white;
+    border-radius: 0.75rem;
+  }
+
+  .emblaSlide {
+    padding: 0 0.5rem;
+  }
+
+  .emblaButton {
+    height: 35px;
+    width: 35px;
+    font-size: 0.9rem;
+  }
+
+  .title {
+    font-size: 1rem;
+    margin-top: -1.3rem;
+
+  }
+
+  .floatingHearts span {
+    font-size: 1.2rem;
   }
 }
